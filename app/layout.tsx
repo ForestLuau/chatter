@@ -17,6 +17,8 @@ import { SocketProvider } from "@/components/providers/socket-provider";
 import { QueryProvider } from "@/components/providers/query-provider";
 import { SocketEventProvider } from "@/components/providers/socket-event-provider";
 
+export const dynamic = "force-dynamic";
+
 const font = Geist({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -33,7 +35,9 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+    >
       <html lang="en" className="h-full" suppressHydrationWarning>
         <body className={cn(font.className, "antialiased", "bg-main")}>
           {/* שינוי: הזזת ה-Plugin לכאן (מעל ה-ThemeProvider) */}

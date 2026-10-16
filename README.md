@@ -109,6 +109,11 @@ npm install
 
 Create a `.env` file in the root directory with your keys (Clerk, UploadThing, Database).
 
+For Render, set `DATABASE_URL`, `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`, and
+`CLERK_SECRET_KEY` in the service's Environment settings. Set `UPLOADTHING_TOKEN`
+to enable uploads. Voice and video also require `LIVEKIT_API_KEY`,
+`LIVEKIT_API_SECRET`, and `NEXT_PUBLIC_LIVEKIT_URL`.
+
 ### 4. Setup Database
 
 ```bash
